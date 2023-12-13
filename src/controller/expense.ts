@@ -239,7 +239,7 @@ export const deleteExpense = (req: Request, res: Response) => {
     });
   }
 
-  if (!expense) {
+  if (expense < 0) {
     return res.status(httpStatus.NOT_FOUND).json({
       code: httpStatus.NOT_FOUND,
       message: `Expense with id ${id} not found`,
